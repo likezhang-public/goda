@@ -22,6 +22,7 @@ type Command struct {
 
 	outputType  string
 	labelFormat string
+	splinesFormat string
 
 	nocolor bool
 
@@ -60,6 +61,7 @@ func (cmd *Command) SetFlags(f *flag.FlagSet) {
 
 	f.StringVar(&cmd.outputType, "type", "dot", "output type (dot, graphml, digraph, edges, tgf)")
 	f.StringVar(&cmd.labelFormat, "f", "", "label formatting")
+	f.StringVar(&cmd.splinesFormat, "spline", "curved", "spline format")
 
 	f.BoolVar(&cmd.clusters, "cluster", false, "create clusters")
 	f.BoolVar(&cmd.shortID, "short", false, "use short package id-s inside clusters")
@@ -92,6 +94,7 @@ func (cmd *Command) Execute(ctx context.Context, f *flag.FlagSet, _ ...interface
 			nocolor:  cmd.nocolor,
 			shortID:  cmd.shortID,
 			label:    label,
+			splines:  cmd.splinesFormat,
 		}
 	case "digraph":
 		format = &Digraph{

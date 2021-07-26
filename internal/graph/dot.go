@@ -20,6 +20,7 @@ type Dot struct {
 	shortID  bool
 
 	label *template.Template
+	splines string
 }
 
 func (ctx *Dot) Label(p *pkggraph.Node) string {
@@ -79,14 +80,15 @@ func (ctx *Dot) TreeRef(tree *pkggraph.Tree) string {
 
 func (ctx *Dot) writeGraphProperties() {
 	if ctx.nocolor {
-		fmt.Fprintf(ctx.out, "    node [fontsize=10 shape=rectangle target=\"_graphviz\"];\n")
-		fmt.Fprintf(ctx.out, "    edge [tailport=e];\n")
+		fmt.Fprintf(ctx.out, "    node [fontsize=10 shape=box target=\"_graphviz\"];\n")
+		fmt.Fprintf(ctx.out, "    edge [arrowsize=\"0.5\"];\n")
 	} else {
-		fmt.Fprintf(ctx.out, "    node [penwidth=2 fontsize=10 shape=rectangle target=\"_graphviz\"];\n")
-		fmt.Fprintf(ctx.out, "    edge [tailport=e penwidth=2];\n")
+		fmt.Fprintf(ctx.out, "    node [penwidth=2 fontsize=10 shape=box target=\"_graphviz\"];\n")
+		fmt.Fprintf(ctx.out, "    edge [penwidth=2];\n")
 	}
 	fmt.Fprintf(ctx.out, "    compound=true;\n")
 
+	fmt.Fprintf(ctx.out, "    splines=%s;\n", ctx.splines)
 	fmt.Fprintf(ctx.out, "    rankdir=LR;\n")
 	fmt.Fprintf(ctx.out, "    newrank=true;\n")
 	fmt.Fprintf(ctx.out, "    ranksep=\"1.5\";\n")
