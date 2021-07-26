@@ -9,13 +9,13 @@ import (
 
 	"github.com/google/subcommands"
 
-	"github.com/loov/goda/internal/cut"
-	"github.com/loov/goda/internal/exec"
-	"github.com/loov/goda/internal/graph"
-	"github.com/loov/goda/internal/list"
-	"github.com/loov/goda/internal/pkgset"
-	"github.com/loov/goda/internal/tree"
-	"github.com/loov/goda/internal/weight"
+	"github.com/likezhang-public/goda/internal/cut"
+	"github.com/likezhang-public/goda/internal/exec"
+	"github.com/likezhang-public/goda/internal/graph"
+	"github.com/likezhang-public/goda/internal/list"
+	"github.com/likezhang-public/goda/internal/pkgset"
+	"github.com/likezhang-public/goda/internal/tree"
+	"github.com/likezhang-public/goda/internal/weight"
 )
 
 func main() {
