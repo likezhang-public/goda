@@ -8,8 +8,8 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/loov/goda/internal/graph/graphml"
-	"github.com/loov/goda/internal/pkggraph"
+	"github.com/likezhang-public/goda/internal/graph/graphml"
+	"github.com/likezhang-public/goda/internal/pkggraph"
 )
 
 type GraphML struct {

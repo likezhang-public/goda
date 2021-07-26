@@ -5,7 +5,7 @@ import (
 
 	"golang.org/x/tools/go/packages"
 
-	"github.com/loov/goda/internal/stat"
+	"github.com/likezhang-public/goda/internal/stat"
 )
 
 type Graph struct {

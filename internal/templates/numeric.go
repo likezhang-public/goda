@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"text/template"
 
-	"github.com/loov/goda/internal/memory"
+	"github.com/likezhang-public/goda/internal/memory"
 )
 
 func numericFuncs() template.FuncMap {
