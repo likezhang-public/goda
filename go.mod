@@ -1,4 +1,4 @@
-module github.com/loov/goda
+module github.com/likezhang-public/goda
 
 go 1.12
 
